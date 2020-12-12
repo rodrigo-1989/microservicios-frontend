@@ -1,0 +1,27 @@
+<div class="card text-dark bg-light mb-3">
+  <div class="card-header">{{titulo}}</div>
+    <div class="card-body">
+      <button class="btn btn-secondary y-2" routerLink="/alumnos">«volver</button>
+      <form>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input class="form-control" type="text" name="nombre" [(ngModel)]="alumno.nombre" id="nombre">
+          <div class="alert alert-danger" *ngIf="error?.nombre">{{error.nombre}}</div>
+        </div>
+        <div class="form-group">
+          <label for="apellido">Apellido</label>
+          <input class="form-control" type="text" name="apellido" [(ngModel)]="alumno.apellido" id="apellido">
+          <div class="alert alert-danger" *ngIf="error?.apellido">{{error.apellido}}</div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input class="form-control" type="text" name="email" [(ngModel)]="alumno.email" id="email">
+          <div class="alert alert-danger" *ngIf="error?.email">{{error.email}}</div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" type="button" (click)="alumno.id? editar():crear()"
+          >{{alumno.id? 'Editar':'Crear'}}</button>
+        </div>
+      </form>
+  </div>
+</div>
