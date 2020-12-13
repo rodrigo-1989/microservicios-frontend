@@ -1,10 +1,11 @@
 import { Pregunta } from './pregunta';
 import { Asignatura } from './asignatura';
-export class Examen {
-  id?: number;
-  nombre?: string;
-  createAt?: string;
+import { Generic } from './generic';
+export class Examen implements Generic{
+  id: number;
+  nombre: string;
+  createAt: string;
   preguntas: Pregunta [] = [];
-  asignatura?: Asignatura;
-  respondido?: boolean;
+  asignatura: Asignatura;
+  respondido: boolean;
 }
