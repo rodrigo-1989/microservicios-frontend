@@ -11,7 +11,7 @@ import { BASE_ENDPOINT } from '../../config/app';
 })
 export class AlumnosComponent extends CommonListarComponent<Alumno, AlumnoService> implements OnInit {
 
-  baseEndPoint = BASE_ENDPOINT+'/alumnos'
+  baseEndPoint = BASE_ENDPOINT+'/cursos';
   constructor(service: AlumnoService) {
     super(service);
     this.titulo ='°_° Listado de alumnos °_°';

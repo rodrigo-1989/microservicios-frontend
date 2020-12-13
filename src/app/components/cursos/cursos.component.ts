@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonListarComponent } from '../common-listar.component';
+import { CursoService } from '../../services/curso.service';
+import { Curso } from '../../models/curso';
 
 @Component({
   selector: 'app-cursos',
   templateUrl: './cursos.component.html',
   styleUrls: ['./cursos.component.css']
 })
-export class CursosComponent implements OnInit {
 
-  constructor() { }
+export class CursosComponent extends CommonListarComponent<Curso,CursoService> implements OnInit {
 
-  ngOnInit(): void {
+  constructor(service: CursoService) {
+    super(service);
+    this.titulo = 'Listado de cursos';
+    this.nombreModel = Curso.name;
   }
+
+
 
 }
