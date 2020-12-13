@@ -24,18 +24,19 @@ export class AlumnosFormComponent
       this.nombreModel = Alumno.name;
     }
 
-  public seleccionarFoto( event: any ): void{
+  public seleccionarFoto( event ): void{
     this.fotoSeleccionada = event.target.files[0];
-    console.log(this.fotoSeleccionada);
 
     if ( this.fotoSeleccionada.type.indexOf('image') < 0 ){
         this.fotoSeleccionada = null;
-        Swal.fire('Error: al selecionar la foto','El archivo de de ser del tipo imagen','error');
+        Swal.fire('Error: al selecionar la foto',
+                  'El archivo de de ser del tipo imagen',
+                  'error');
     }
   }
 
   public crear():void{
-    if(!this.seleccionarFoto){
+    if(!this.fotoSeleccionada){
       super.crear();
     }else{
       this.service.crearConFoto(this.model,this.fotoSeleccionada).subscribe( alumno=>{
@@ -49,14 +50,13 @@ export class AlumnosFormComponent
       },err=>{
         if(  err.status === 400){
           this.error = err.error;
-          console.log(this.error);
         }
       }
       );
     }
   }
   public editar():void{
-    if(!this.seleccionarFoto){
+    if(!this.fotoSeleccionada){
       super.editar();
     }else{
       this.service.editarConFoto(this.model,this.fotoSeleccionada).subscribe( alumno=>{
