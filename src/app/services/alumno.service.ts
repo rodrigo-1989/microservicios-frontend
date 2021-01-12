@@ -34,4 +34,7 @@ export class AlumnoService extends CommonService<Alumno>{
     formData.append('email',alumno.email);
     return this.http.put<Alumno>( `${this.baseEndPoint}/editar-con-foto/${alumno.id}`,formData);
   }
+  public fitrarPorNombre(nombre: string):Observable<Alumno[]>{
+    return this.http.get<Alumno[]>(`${this.baseEndPoint}/filtrar/${nombre}`);
+  }
 }

@@ -11,10 +11,15 @@ import { LayoutModule } from './layout/layout.module';
 import { AlumnosFormComponent } from './components/alumnos/alumnos-form.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatPaginatorModule } from '@angular/material/paginator';
 import { CursoFormComponent } from './components/cursos/curso-form.component';
 import { ExamenFormComponent } from './components/examenes/examen-form.component';
 
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatButtonModule } from '@angular/material/button';
+import { AsignarAlumnosComponent } from './components/cursos/asignar-alumnos.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,8 @@ import { ExamenFormComponent } from './components/examenes/examen-form.component
     ExamenesComponent,
     AlumnosFormComponent,
     CursoFormComponent,
-    ExamenFormComponent
+    ExamenFormComponent,
+    AsignarAlumnosComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +39,11 @@ import { ExamenFormComponent } from './components/examenes/examen-form.component
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatTableModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
