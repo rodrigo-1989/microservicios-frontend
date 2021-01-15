@@ -13,7 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CursoFormComponent } from './components/cursos/curso-form.component';
 import { ExamenFormComponent } from './components/examenes/examen-form.component';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
@@ -24,6 +25,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { AsignarExamenesComponent } from './components/cursos/asignar-examenes.component';
+import { ResponderExamenComponent } from './components/alumnos/responder-examen.component';
+import { ResponderExamenModalComponent } from './components/alumnos/responder-examen-modal.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +38,11 @@ import { AsignarExamenesComponent } from './components/cursos/asignar-examenes.c
     CursoFormComponent,
     ExamenFormComponent,
     AsignarAlumnosComponent,
-    AsignarExamenesComponent
+    AsignarExamenesComponent,
+    ResponderExamenComponent,
+    ResponderExamenModalComponent
   ],
+  entryComponents:[ResponderExamenModalComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -52,7 +58,9 @@ import { AsignarExamenesComponent } from './components/cursos/asignar-examenes.c
     ReactiveFormsModule,
     MatTabsModule,
     MatAutocompleteModule,
-    MatCardModule
+    MatCardModule,
+    MatExpansionModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
